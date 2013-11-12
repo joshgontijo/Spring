@@ -11,8 +11,8 @@
 		</property>
 	</bean>
 	<bean name="props"
-		class="br.josue.devtech.springconfiguration.Properties">
-		<property name="stringValue" value="${stringValue}" />
-		<property name="intValue" value="${intValue}" />
+		class="br.josue.devtech.springxmlconfiguration.Properties">
+		<property name="name" value="${name}" />
+		<property name="age" value="${age}" />
 	</bean>
 </beans>

@@ -9,6 +9,8 @@
     <modules>
         <module>LiquibaseH2Maven</module>
         <module>SpringAutowired</module>
-    <module>SpringConfiguration</module>
-  </modules>
+    
+    <module>SpringXMLConfiguration</module>
+    <module>SpringAnnotationConfiguration</module>
+    </modules>
 </project>

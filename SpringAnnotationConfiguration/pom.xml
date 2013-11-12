@@ -8,9 +8,9 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <groupId>br.josue.devtech</groupId>
-    <artifactId>SpringConfiguration</artifactId>
+    <artifactId>SpringAnnotationConfiguration</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>SpringConfiguration</name>
+    <name>SpringAnnotationConfiguration</name>
     <url>http://maven.apache.org</url>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
