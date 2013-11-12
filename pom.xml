@@ -9,4 +9,7 @@
     <modules>
         <module>LiquibaseH2Maven</module>
     </modules>
+	<modules>
+        <module>SpringAutowired</module>
+    </modules>
 </project>
