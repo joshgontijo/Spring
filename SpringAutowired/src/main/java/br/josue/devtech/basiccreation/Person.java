@@ -1,4 +1,5 @@
-package pacote.test;
+package br.josue.devtech.basiccreation;
+
 
 public class Person {
 

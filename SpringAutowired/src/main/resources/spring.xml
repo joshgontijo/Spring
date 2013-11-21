@@ -6,7 +6,13 @@
 	http://www.springframework.org/schema/context
 	http://www.springframework.org/schema/context/spring-context-2.5.xsd">
 
-<!--	<context:annotation-config />-->
-	<bean name="person" class="pacote.test.Person" />
+	<context:annotation-config />
+
+	<!-- Scan entire package, so bean declaration is not needed -->
+	<context:component-scan base-package="br.josue."/>
+	
+<!-- 	<bean name="person2" class="br.josue.devtech.wiring.Person2" /> -->
+<!-- 	<bean name="mainclass2" class="br.josue.devtech.wiring.MainClass2" /> -->
+<!-- 	<bean name="anotherclass" class="br.josue.devtech.wiring.AnotherClass" /> -->
 
 </beans>

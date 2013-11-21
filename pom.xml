@@ -12,5 +12,8 @@
     
     <module>SpringXMLConfiguration</module>
     <module>SpringAnnotationConfiguration</module>
+    <module>mavenproject1</module>
+    <module>JerseyWS</module>
+        <module>SpringWS</module>
     </modules>
 </project>
