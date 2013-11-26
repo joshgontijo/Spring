@@ -18,5 +18,6 @@
 		<module>SpringWS</module>
 		<module>SpringInjection</module>
 		<module>WebSocket</module>
+		<module>SpringSecurity</module>
 	</modules>
 </project>
