@@ -28,8 +28,11 @@
 
 		<!-- Custom authentication provider -->
 		<!-- customAuthenticationProvider is defined by @Component on br.josue.custom.auth -->
+		<!-- can be used direct user-service-ref and remove the custom auth provider -->
 		<authentication-provider ref="customAuthenticationProvider" />
 	</authentication-manager>
+
+	<!-- Password hash ref: http://springinpractice.com/2008/10/11/hashing-and-salting-passwords-with-spring-security-2 -->
 
 
 	<!-- Custom authentication provider bean -->

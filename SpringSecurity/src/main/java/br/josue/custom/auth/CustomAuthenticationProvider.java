@@ -39,6 +39,9 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 	
     @Autowired
     private UserService userService;
+    
+    @Autowired
+    private CustomPasswordEncrypt hasher;
  
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
@@ -51,7 +54,8 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
             throw new BadCredentialsException("Username not found.");
         }
  
-        if (!password.equals(user.getPassword())) {
+        //params: provided - database data
+        if (!hasher.matches(password, user.getPassword())) {
             throw new BadCredentialsException("Wrong password.");
         }
  
