@@ -19,5 +19,6 @@
 		<module>SpringInjection</module>
 		<module>WebSocket</module>
 		<module>SpringSecurity</module>
+		<module>LiquibaseH2Spring</module>
 	</modules>
 </project>
