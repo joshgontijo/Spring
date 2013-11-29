@@ -9,4 +9,5 @@
 	<import resource="classpath:bean.xml"/>
 	<!-- Database props / ... -->
 	<import resource="classpath:database-config.xml" />
+	
 </beans>

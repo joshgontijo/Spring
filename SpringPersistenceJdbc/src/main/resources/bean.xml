@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 
 	<!-- Config PlaceHolder - Loads Prop File -->
-	<bean
-		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-		<property name="location">
-			<value>classpath:database.properties</value>
-		</property>
-	</bean>
+	<!-- <bean -->
+	<!-- class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"> -->
+	<!-- <property name="location"> -->
+	<!-- <value>classpath:database.properties</value> -->
+	<!-- </property> -->
+	<!-- </bean> -->
 
+	<!-- OR -->
+
+	<!-- SIMPLEST WAY USING CONTEXT -->
+	<!-- WARNING: THIS CHECK SYSTEM PROPS FIRST, SO CAN HAVE DUPLICATE KEYS e.g: SYSTEM.user 
+		and MYAPP.user.... use local-override="true" int this cases -->
+		<!-- REF: http://sethuramanmurali.wordpress.com/2013/05/04/load-properties-file-using-spring-context/ -->
+	<context:property-placeholder location="classpath:database.properties" />
+
+	<!-- Enable config annotation -->
+	<context:component-scan base-package="br.spring.persistence" />
 </beans>
