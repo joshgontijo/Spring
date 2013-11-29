@@ -20,5 +20,6 @@
 		<module>WebSocket</module>
 		<module>SpringSecurity</module>
 		<module>LiquibaseH2Spring</module>
+		<module>SpringPersistenceJdbc</module>
 	</modules>
 </project>

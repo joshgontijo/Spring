@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog logicalFilePath="does-not-matter" xmlns="http://www.liquibase.org/xml/ns/dbchangelog" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+	
+	<!-- Should be links to all changes done in this version. -->
+    <include file="2013-09-21--01-initial-schema-import.xml" relativeToChangelogFile="true"/>    
+    
+</databaseChangeLog>
