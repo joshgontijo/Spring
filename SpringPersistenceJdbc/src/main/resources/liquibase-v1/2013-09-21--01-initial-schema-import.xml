@@ -2,9 +2,9 @@
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
-	
-	
-	<changeSet author="josue" id="initial-schema-import-2">
+
+
+	<changeSet author="josue" id="create-users-1">
 		<createTable tableName="users">
 			<column name="UUID" type="VARCHAR(255)">
 				<constraints primaryKey="true" />
@@ -19,16 +19,30 @@
 				<constraints nullable="false" unique="true" />
 			</column>
 			<column name="PHONE" type="VARCHAR(255)" />
-			<column name="FIRST_NAME" type="VARCHAR(255)" />
-			<column name="LAST_NAME" type="VARCHAR(255)" />
-			<column name="STATUS" type="VARCHAR(255)">
-				<constraints nullable="false" />
-			</column>
 			<column name="DATE_CREATED" type="TIMESTAMP">
 				<constraints nullable="false" />
 			</column>
+			<!-- default is not null with default now() -->
 			<column name="DATE_UPDATED" type="TIMESTAMP" />
 		</createTable>
+	</changeSet>
+
+	<!-- Drop Column sample -->
+	<changeSet author="josue" id="drop-column-sample-1">
+		<dropColumn tableName="users" columnName="PHONE" />
+	</changeSet>
+
+	<!-- Drop null constraint sample -->
+	<changeSet id="drop-nullconstraint-sample-1" author="josue">
+		<dropNotNullConstraint tableName="users"
+			columnDataType="TIMESTAMP" columnName="DATE_CREATED" />
+	</changeSet>
+
+	<!-- Add column sample -->
+	<changeSet id="add-column-sample-1" author="josue">
+		<addColumn tableName="users">
+			<column name="AGE" type="INTEGER" />
+		</addColumn>
 	</changeSet>
 
 </databaseChangeLog>

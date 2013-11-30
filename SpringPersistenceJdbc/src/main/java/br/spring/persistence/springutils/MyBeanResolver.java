@@ -42,10 +42,10 @@ public class MyBeanResolver implements BeanDefinitionRegistryPostProcessor {
 		// each interface
 		// you have access to all bean-definition names with:
 		// beanFactory.getBeanDefinitionNames()
-		String beanName = "jdbcData"; // let's say is this one
 
+		// String beanName = "jdbcData"; // let's say is this one
 		// get the definition for that bean and set it as primary
-		beanFactory.getBeanDefinition(beanName).setPrimary(true);
+		// beanFactory.getBeanDefinition(beanName).setPrimary(true);
 
 		// TODO check beans by instance of
 		// Map<String, Class<f>> beans =

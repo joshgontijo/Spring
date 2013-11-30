@@ -2,8 +2,17 @@ package br.spring.persistence.model;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+
+@Entity
+//ref: http://viralpatel.net/blogs/hibernate-inheritance-table-per-concrete-class-annotation-xml-mapping/
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Resource {
 
+	@Id
 	private String uuid;
 	private Date date_created;
 	private Date date_updated;
