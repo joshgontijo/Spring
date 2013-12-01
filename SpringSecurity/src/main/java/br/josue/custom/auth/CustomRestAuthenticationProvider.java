@@ -29,10 +29,10 @@ import br.josue.custom.auth.bean.MyUser;
  */
 
 @Component
-public class CustomAuthenticationProvider implements AuthenticationProvider {
+public class CustomRestAuthenticationProvider implements AuthenticationProvider {
  
-	private static final Logger logger = LoggerFactory.getLogger(CustomAuthenticationProvider.class);
-	public CustomAuthenticationProvider(){
+	private static final Logger logger = LoggerFactory.getLogger(CustomRestAuthenticationProvider.class);
+	public CustomRestAuthenticationProvider(){
 		logger.info("######## CREATED CustomAuthenticationProvider ########");
 	}
 	

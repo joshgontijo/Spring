@@ -8,11 +8,12 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import br.josue.custom.auth.bean.MyUser;
+import br.josue.custom.dao.UserDao;
  
 
  
 @Service
-public class UserService implements UserDetailsService {
+public class UserService {
  
 	@Autowired
     private UserDao userDao;
@@ -24,7 +25,6 @@ public class UserService implements UserDetailsService {
 	}
 
 
-	@Override
     public MyUser loadUserByUsername(final String username) throws UsernameNotFoundException {
 		return userDao.loadUserByUsername(username);
         

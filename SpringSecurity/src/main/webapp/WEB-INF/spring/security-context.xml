@@ -6,16 +6,25 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 
 	<!-- Enables and scan annotation beans, replaces XML config -->
-	<context:component-scan base-package="br.josue.custom.auth" />
+	<context:component-scan base-package="br.josue.custom" />
 
 	<!-- Declares the we are using annotations / XML mixed, helps to spring 
 		find the annotated beans, always use when mixed config -->
 	<context:annotation-config />
 
-	<http>
+
+	<!-- REST requests -->
+	<http request-matcher-ref="basicAuthRequestMatcher"><!-- our custom requestMatcher -->
 		<intercept-url pattern="/secured" access="ROLE_USER" />
 		<http-basic />
 	</http>
+
+	<!-- Standard requests, logged in from Form -->
+	<http auto-config="true">
+		<form-login/>
+	</http>
+
+
 	<!-- <debug /> -->
 
 	<authentication-manager>
@@ -29,7 +38,7 @@
 		<!-- Custom authentication provider -->
 		<!-- customAuthenticationProvider is defined by @Component on br.josue.custom.auth -->
 		<!-- can be used direct user-service-ref and remove the custom auth provider -->
-		<authentication-provider ref="customAuthenticationProvider" />
+		<authentication-provider ref="customRestAuthenticationProvider" />
 	</authentication-manager>
 
 	<!-- Password hash ref: http://springinpractice.com/2008/10/11/hashing-and-salting-passwords-with-spring-security-2 -->

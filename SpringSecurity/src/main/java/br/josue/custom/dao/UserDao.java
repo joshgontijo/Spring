@@ -1,4 +1,4 @@
-package br.josue.custom.auth;
+package br.josue.custom.dao;
 
 
 import java.util.ArrayList;
@@ -21,6 +21,19 @@ public class UserDao {
 	}
 	
     public MyUser loadUserByUsername(final String username) {
+        MyUser user = new MyUser();
+
+        user.setUsername("USERNAME1-"+username);
+        user.setPassword("PASSWORD1");
+        Role r = new Role();
+        r.setName("ROLE_USER");
+        List<Role> roles = new ArrayList<Role>();
+        roles.add(r);
+        user.setAuthorities(roles);
+        return user;
+    }
+    
+    public MyUser loadRestCredentials(final String username) {
         MyUser user = new MyUser();
 
         user.setUsername("USERNAME1-"+username);
