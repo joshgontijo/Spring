@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import br.josue.custom.auth.bean.MyUser;
+import br.josue.custom.auth.bean.RestAuthenticationBean;
 import br.josue.custom.auth.bean.Role;
 
  
@@ -33,16 +34,16 @@ public class UserDao {
         return user;
     }
     
-    public MyUser loadRestCredentials(final String username) {
-        MyUser user = new MyUser();
+    public RestAuthenticationBean loadRestCredentials(final String username) {
+    	RestAuthenticationBean restAuth = new RestAuthenticationBean();
 
-        user.setUsername("USERNAME1-"+username);
-        user.setPassword("PASSWORD1");
+    	restAuth.setRestUser("USERNAME1-"+username);
+    	restAuth.setRestPassword("PASSWORD1");
         Role r = new Role();
         r.setName("ROLE_USER");
         List<Role> roles = new ArrayList<Role>();
         roles.add(r);
-        user.setAuthorities(roles);
-        return user;
+        restAuth.setAuthorities(roles);
+        return restAuth;
     }
 }

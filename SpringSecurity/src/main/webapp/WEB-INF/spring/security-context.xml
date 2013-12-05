@@ -14,31 +14,37 @@
 
 
 	<!-- REST requests -->
-	<http request-matcher-ref="basicAuthRequestMatcher"><!-- our custom requestMatcher -->
+	<http request-matcher-ref="basicAuthRequestMatcher"
+		authentication-manager-ref="restAuthManager"><!-- our custom requestMatcher -->
 		<intercept-url pattern="/secured" access="ROLE_USER" />
 		<http-basic />
 	</http>
 
 	<!-- Standard requests, logged in from Form -->
-	<http auto-config="true">
-		<form-login/>
+	<http auto-config="true" authentication-manager-ref="formAuthManager">
+		<intercept-url pattern="/landing" access="ROLE_USER" />
+		<form-login login-page="/login" default-target-url="/landing" />
 	</http>
 
 
 	<!-- <debug /> -->
 
-	<authentication-manager>
-		<!-- Simple authentication provicer -->
-		<!-- <authentication-provider> -->
-		<!-- <user-service> -->
-		<!-- <user name="1" password="1" authorities="ROLE_USER" /> -->
-		<!-- </user-service> -->
-		<!-- </authentication-provider> -->
+	<!-- AUTHENTICATION MANAGER #1 - REST -->
+	<authentication-manager id="restAuthManager">
 
-		<!-- Custom authentication provider -->
 		<!-- customAuthenticationProvider is defined by @Component on br.josue.custom.auth -->
 		<!-- can be used direct user-service-ref and remove the custom auth provider -->
+
+		<!-- multiple auth providers ref: http://stackoverflow.com/questions/9303502/multiple-authentication-providers-in-spring-security -->
+
+		<!-- Custom authentication Annotated class provider -->
 		<authentication-provider ref="customRestAuthenticationProvider" />
+	</authentication-manager>
+
+	<!-- AUTHENTICATION MANAGER #2 - FORM -->
+	<authentication-manager id="formAuthManager">
+		<!-- multiple auth providers ref: http://stackoverflow.com/questions/9303502/multiple-authentication-providers-in-spring-security -->
+		<authentication-provider ref="customFormAuthenticationProvider" />
 	</authentication-manager>
 
 	<!-- Password hash ref: http://springinpractice.com/2008/10/11/hashing-and-salting-passwords-with-spring-security-2 -->
