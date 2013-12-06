@@ -14,36 +14,45 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 
 public class AsyncReceiver implements MessageListener {
 
-    private ConnectionFactory factory = null;
-    private Connection connection = null;
-    private Session session = null;
-    private Destination destination = null;
-    private MessageConsumer consumer = null;
+	private ConnectionFactory factory = null;
+	private Connection connection = null;
+	private Session session = null;
+	private Destination destination = null;
+	private MessageConsumer consumer = null;
 
-    public void receiveMessage() throws JMSException {
+	public void receiveMessage() throws JMSException {
 
-        factory = new ActiveMQConnectionFactory(ActiveMQConnection.DEFAULT_BROKER_URL);
-        connection = factory.createConnection();
-        connection.start();
-        session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-        destination = session.createQueue("TESTQUEUE");
-        consumer = session.createConsumer(destination);
-        consumer.setMessageListener(this); // 1
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-        } // 2
+		factory = new ActiveMQConnectionFactory(ActiveMQConnection.DEFAULT_BROKER_URL);
+		connection = factory.createConnection();
+		connection.start();
+		session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
+		destination = session.createQueue("TESTQUEUE");
+		consumer = session.createConsumer(destination);
+		consumer.setMessageListener(this); // 1
+                System.out.println("Waiting for message...");
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+		} // 2
 
-    }
+	}
 
-    public void onMessage(Message message) {
-        if (message instanceof TextMessage) {
+	public void onMessage(Message message) {
+		if (message instanceof TextMessage) {
+			try {
+				System.out.println("Async message received: " + ((TextMessage) message).getText());
+			} catch (JMSException e) {
+				System.err.println(e.getMessage());
+			}
+		}
+	}
+        
+        public static void main(String... args){
             try {
-                System.out.println("Async message received: " + ((TextMessage) message).getText());
-            } catch (JMSException e) {
-                System.err.println(e.getMessage());
+                new AsyncReceiver().receiveMessage();
+            } catch (JMSException ex) {
+                System.out.println(ex.getMessage());
             }
         }
-    }
 
 }

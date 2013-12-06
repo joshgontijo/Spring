@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import br.activemq.sender.service.AsyncMessageSenderService;
+import br.activemq.sender.service.SyncMessageSenderService;
 import br.activemq.sender.service.SyncObjectSenderService;
 
 /**
@@ -29,7 +30,7 @@ public class HomeController {
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
 	@Autowired
-	AsyncMessageSenderService syncMessageSenderService;
+	SyncMessageSenderService syncMessageSenderService;
 	
 	@Autowired
 	SyncObjectSenderService syncObjectSenderService;
