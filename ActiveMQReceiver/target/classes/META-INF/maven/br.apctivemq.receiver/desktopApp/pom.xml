@@ -29,4 +29,10 @@
     </dependencies>
             
 
+    <parent>
+    	<groupId>br.josue.devtech</groupId>
+    	<artifactId>DevTech</artifactId>
+    	<version>1.0-SNAPSHOT</version>
+    	<relativePath>..</relativePath>
+    </parent>
 </project>

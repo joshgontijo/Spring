@@ -71,5 +71,13 @@ public class HomeController {
 		}
 		return null;
 	}
+	
+	
+	
+	//SIMPLE CONTROLLER
+	@RequestMapping(value = "/bootstrap", method = RequestMethod.GET)
+	public String index() {
 
+		return "bootstrap";
+	}
 }

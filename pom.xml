@@ -21,5 +21,8 @@
 		<module>SpringSecurity</module>
 		<module>LiquibaseH2Spring</module>
 		<module>SpringPersistenceJdbc</module>
+		<module>ActiveMQReceiver</module>
+		<module>ActiveMQSender</module>
+		<module>SpringAsync</module>
 	</modules>
 </project>
