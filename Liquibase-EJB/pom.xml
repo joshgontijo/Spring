@@ -12,6 +12,7 @@
 	<properties>
 		<endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	 <glassfish.embedded-static-shell.jar>C:\Program Files\glassfish-4.0\glassfish\lib\embedded\glassfish-embedded-static-shell.jar</glassfish.embedded-static-shell.jar>
 	</properties>
 
 	<dependencies>
@@ -85,12 +86,19 @@
 			<version>4.10</version>
 			<scope>test</scope>
 		</dependency>
-<!-- 		<dependency> -->
-<!-- 			<groupId>javax</groupId> -->
-<!-- 			<artifactId>javaee-api</artifactId> -->
-<!-- 			<version>6.0</version> -->
-<!-- 			<scope>provided</scope> -->
-<!-- 		</dependency> -->
+	 <dependency>
+	  <groupId>org.glassfish.main.extras</groupId>
+	  <artifactId>glassfish-embedded-static-shell</artifactId>
+	  <version>3.1.2.2</version>
+	  <scope>system</scope>
+	  <systemPath>${glassfish.embedded-static-shell.jar}</systemPath>
+	 </dependency>
+	 <dependency> 
+ 			<groupId>javax</groupId> 
+ 			<artifactId>javaee-api</artifactId> 
+ 			<version>6.0</version> 
+ 			<scope>provided</scope> 
+ 		</dependency> 
 	 <dependency>
 	  <groupId>org.eclipse.persistence</groupId>
 	  <artifactId>eclipselink</artifactId>
@@ -113,7 +121,7 @@
 				<version>2.0.1</version>
 				<executions>
 					<execution>
-						<phase>test</phase> <!-- test run -->
+						<phase>test-compile</phase> <!-- test run -->
 						<configuration>
 							<propertyFile>src/main/resources/liquibase.properties</propertyFile>
 						</configuration>

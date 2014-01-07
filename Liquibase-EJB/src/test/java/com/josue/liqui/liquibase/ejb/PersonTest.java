@@ -104,23 +104,32 @@ public class PersonTest {
 
         Person person = new Person();
         person.setUuid(personUuid);
-        person.setPassword(null);
+        person.setPassword("");
         person.setUsername("username2");
 
         try {
             transaction.begin();
             em.persist(person);
+            if(true){
+                throw new RuntimeException();
+//                transaction.rollback();
+//                System.out.println("ROLLED BACK #################");
+            }
             transaction.commit();
-            logger.info("Success !");
-        } catch (Exception e) {
-            logger.info("EXCEPTION **** "+ e.getMessage());
-            System.err.println(e.getMessage());
+            System.out.println("SUCCESS #################");
+        } catch (RuntimeException e) {
+            System.out.println("EXCEPTION ################# "+ e);
             transaction.rollback();
-//            logger.info("EXCEPTION **** "+ e.getMessage());
+
         }
-//        Person person2 = em.find(Person.class, personUuid);
+//        finally{
+//            if(em.isOpen())
+//                em.close();
+//        }
+        
+        Person person2 = em.find(Person.class, personUuid);
 //
-//        assertNotNull(person2);
+        assertNull(person2);
 //        assertEquals(person, person2);
     }
 
