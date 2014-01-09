@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="br.ejb.fromarchtype.PersonTest" time="1.422" tests="3" errors="0" skipped="0" failures="0">
+<testsuite name="br.ejb.fromarchtype.PersonTest" time="1.445" tests="3" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_40\jre\bin"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="Service Pack 1"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="C:\Users\Josue\Documents\NetBeansProjects\Eclipse\Hibernate-Liquibase-EJB"/>
+    <property name="user.dir" value="C:\Users\Josue\Documents\NetBeansProjects\Repository\DevTech\Hibernate-Liquibase-EJB"/>
     <property name="java.runtime.version" value="1.7.0_40-b43"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.7.0_40\jre\lib\endorsed"/>
@@ -25,7 +25,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 7"/>
-    <property name="classworlds.conf" value="C:\Users\Josue\Documents\NetBeansProjects\Eclipse\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf2831945238461464424.tmp"/>
+    <property name="classworlds.conf" value="C:\Users\Josue\Documents\NetBeansProjects\Eclipse\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf6136274434121255429.tmp"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
     <property name="java.library.path" value="C:\Program Files\Java\jdk1.7.0_40\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Ruby193\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;c:\Maven/bin;C:\Program Files\Java\jdk1.7.0_40/bin;C:\Program Files\MySQL\MySQL Server 5.5\bin;C:\apache-ant-1.9.2/bin;c:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;c:\Program Files\Microsoft SQL Server\100\Tools\Binn\;c:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Git\cmd;C:\gource-0.39.win32;C:\apache-jmeter-2.10/bin;C:\Program Files\nodejs\;C:\Program Files (x86)\MySQL\MySQL Utilities 1.3.4\;C:\Program Files (x86)\Heroku\bin;C:\Program Files (x86)\git\cmd;C:\Users\Josue\AppData\Roaming\npm\;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -61,7 +61,7 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="testSimple" classname="br.ejb.fromarchtype.PersonTest" time="1.187"/>
-  <testcase name="testTransaction" classname="br.ejb.fromarchtype.PersonTest" time="0.172"/>
-  <testcase name="testTransactionFail" classname="br.ejb.fromarchtype.PersonTest" time="0.063"/>
+  <testcase name="testSimple" classname="br.ejb.fromarchtype.PersonTest" time="1.188"/>
+  <testcase name="testTransaction" classname="br.ejb.fromarchtype.PersonTest" time="0.182"/>
+  <testcase name="testTransactionFail" classname="br.ejb.fromarchtype.PersonTest" time="0.075"/>
 </testsuite>

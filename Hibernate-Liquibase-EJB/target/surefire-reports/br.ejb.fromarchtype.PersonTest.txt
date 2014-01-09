@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: br.ejb.fromarchtype.PersonTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.422 sec - in br.ejb.fromarchtype.PersonTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.447 sec - in br.ejb.fromarchtype.PersonTest
