@@ -17,7 +17,7 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 public class UserFacade extends AbstractFacade<User> {
-    @PersistenceContext(unitName = "br.arq.jb.managed_Arquillian-JBoss-Managed_ejb_1.0-SNAPSHOTPU")
+    @PersistenceContext
     private EntityManager em;
 
     @Override
