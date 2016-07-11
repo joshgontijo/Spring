@@ -1,5 +1,3 @@
-/SpringConfiguration/target/
-/SpringAnnotationConfiguration/target/
-/mavenproject1/target/
-/SpringWS/target/
-/WebSocket/target/
+**/target/
+**/.idea/
+**/*.iml
